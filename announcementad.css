@@ -1,0 +1,226 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+.announcement-ad-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Container for the content area */
+.ad-content {
+  flex-grow: 1;
+  padding: 40px;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styles */
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.ad-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.ad-card {
+  width: 350px;
+  min-height: 250px;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid #e0e0e0;
+}
+
+.ad-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.add-ad-card {
+  background-color: #e3f2fd;
+}
+
+.view-ad-card {
+  background-color: #f3e5f5;
+}
+
+/* Modal */
+.ad-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.ad-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ad-modal-content {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 800px; /* Increased width for a larger modal */
+  position: relative;
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+.ad-modal-content h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.ad-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.ad-close:hover {
+  color: #d32f2f;
+}
+
+.ad-item {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between; /* Align content and buttons horizontally */
+  align-items: center;
+}
+
+.ad-text {
+  flex-grow: 1;
+}
+
+.ad-actions {
+  display: flex;
+  gap: 10px;
+}
+
+button.edit-btn {
+  background-color: #1e88e5;
+  padding: 10px 15px;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.edit-btn:hover {
+  background-color: #1565c0;
+}
+
+button.delete-btn {
+  background-color: #e53935;
+  padding: 10px 15px;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.delete-btn:hover {
+  background-color: #c62828;
+}
+
+button.ad-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.ad-btn:hover {
+  background-color: #388e3c;
+}
+
+.ad-error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Form Elements */
+input, textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .ad-cards-container {
+    flex-direction: column;
+  }
+
+  .ad-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .ad-item {
+    flex-direction: column; /* Stack content and buttons vertically on small screens */
+    align-items: flex-start;
+  }
+
+  .ad-actions {
+    margin-top: 10px;
+  }
+
+  .ad-modal-content {
+    max-width: 95%;
+  }
+}
